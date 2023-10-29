@@ -1,10 +1,8 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import './CoctailData.css';
 
 const BASE_PATH =
   'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail';
-
-type ComponentProps = {};
 
 type ComponentState = {
   error: null | Error;
@@ -18,8 +16,11 @@ interface IDrinks {
   strDrinkThumb: string;
 }
 
-class CoctailData extends React.Component<ComponentProps, ComponentState> {
-  constructor(props: ComponentProps) {
+class CoctailData extends React.Component<
+  NonNullable<unknown>,
+  ComponentState
+> {
+  constructor(props: NonNullable<unknown>) {
     super(props);
     this.state = {
       error: null,

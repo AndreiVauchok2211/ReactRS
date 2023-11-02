@@ -1,4 +1,5 @@
-import React from 'react';
+import { Component } from 'react';
+import { ReactNode } from 'react';
 import './CoctailData.css';
 
 const BASE_PATH =
@@ -16,10 +17,7 @@ interface IDrinks {
   strDrinkThumb: string;
 }
 
-class CoctailData extends React.Component<
-  NonNullable<unknown>,
-  ComponentState
-> {
+class CoctailData extends Component<NonNullable<unknown>, ComponentState> {
   constructor(props: NonNullable<unknown>) {
     super(props);
     this.state = {
@@ -46,7 +44,7 @@ class CoctailData extends React.Component<
       };
   }
 
-  render(): React.ReactNode {
+  render(): ReactNode {
     const { error, isLoaded, items } = this.state;
 
     console.log(items);

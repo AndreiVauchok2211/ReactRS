@@ -1,9 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
+import { ReactNode } from 'react';
 import Field from './components/Field/Field';
 import Form from './components/Form/Form';
 
-class App extends React.Component {
-  render(): React.ReactNode {
+class App extends Component {
+  render(): ReactNode {
     return (
       <div className="container">
         <h2 className="info">

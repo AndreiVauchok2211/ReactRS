@@ -1,6 +1,7 @@
+import { clsx } from '../../utils/utils';
 import { Component } from 'react';
 import { ReactNode } from 'react';
-import './CoctailData.css';
+import styles from './CoctailData.module.css';
 
 const BASE_PATH =
   'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail';
@@ -55,12 +56,12 @@ class CoctailData extends Component<NonNullable<unknown>, ComponentState> {
       return <p> Loading... </p>;
     } else {
       return (
-        <ul className="coctail__list">
+        <ul className={clsx(styles.coctail__list)}>
           {items.map((item: IDrinks) => (
-            <li className="coctail__item" key={item.idDrink}>
-              <p className="coctail__text">{item.strDrink}</p>
+            <li className={clsx(styles.coctail__item)} key={item.idDrink}>
+              <p className={clsx(styles.coctail__text)}>{item.strDrink}</p>
               <img
-                className="coctail__image"
+                className={clsx(styles.coctail__image)}
                 src={item.strDrinkThumb}
                 alt={item.strDrink}
               />

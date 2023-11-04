@@ -1,12 +1,13 @@
 import { Component } from 'react';
 import { ReactNode } from 'react';
-import CoctailData from './CoctailData';
-import './Field.css';
+import CoctailData from '../CocktailData/CoctailData';
+import { clsx } from '../../utils/utils';
+import styles from './Field.module.css';
 
 class Field extends Component {
   render(): ReactNode {
     return (
-      <div className="container container__field">
+      <div className={clsx(styles.container, styles.container__field)}>
         <CoctailData />
       </div>
     );

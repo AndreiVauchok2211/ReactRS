@@ -9,11 +9,3 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-.container {
-  padding: 10px 20px;
-}
-
-.info {
-  font-size: 20px;
-}

@@ -1,3 +1,7 @@
 .container__field {
   margin: 0 auto;
 }
+
+.container {
+  padding: 10px 20px;
+}

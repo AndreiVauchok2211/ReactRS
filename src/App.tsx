@@ -5,8 +5,8 @@ export function App() {
   return (
     <div className="container">
       <h1>
-        Search does not work search does not work, the second tasks funcionals
-        are not implemented
+        Search does not work, second task funcionality is not implemented, no
+        routing
       </h1>
       <Search
         onSearch={function (search: string): void {

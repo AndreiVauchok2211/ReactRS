@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type AstronomicalObjectBaseResponse = {
   page: Page;
   sort: { clauses: string[] };
@@ -38,4 +40,8 @@ export type {
   AstronomicalObject,
   AstronomicalObjectBaseResponse,
   AstronomicalObjectType,
+};
+
+export type ProviderProps = {
+  children: ReactNode;
 };

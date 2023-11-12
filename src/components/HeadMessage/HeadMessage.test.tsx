@@ -4,5 +4,9 @@ import { HeadMessage } from './HeadMessage';
 
 test('render texst', () => {
   render(<HeadMessage />);
-  expect(screen.getByText('No routing')).toBeInTheDocument();
+  expect(
+    screen.getByText(
+      'No routing, functionality of pagination and card detailing by click is not implemented'
+    )
+  ).toBeInTheDocument();
 });

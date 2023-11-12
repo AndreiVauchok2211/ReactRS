@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699809386812" clover="3.2.0">
-  <project timestamp="1699809386812" name="All files">
-    <metrics statements="319" coveredstatements="3" conditionals="17" coveredconditionals="1" methods="17" coveredmethods="1" elements="353" coveredelements="5" complexity="0" loc="319" ncloc="319" packages="8" files="17" classes="17"/>
+<coverage generated="1699815538297" clover="3.2.0">
+  <project timestamp="1699815538298" name="All files">
+    <metrics statements="323" coveredstatements="7" conditionals="17" coveredconditionals="1" methods="17" coveredmethods="1" elements="357" coveredelements="9" complexity="0" loc="323" ncloc="323" packages="8" files="17" classes="17"/>
     <package name="src">
       <metrics statements="80" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="App.tsx" path="E:\REACT_RS\ReactRS\src\App.tsx">
@@ -243,12 +243,16 @@
       </file>
     </package>
     <package name="src.components.HeadMessage">
-      <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="HeadMessage.tsx" path="E:\REACT_RS\ReactRS\src\components\HeadMessage\HeadMessage.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="E:\REACT_RS\ReactRS\src\components\HeadMessage\index.ts">
         <metrics statements="1" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>

@@ -6,6 +6,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 // import { SearchContext } from './Contexst';
 // import { AstronomicalObject } from './types/types';
 import { Provider } from './Provider';
+import { HeadMessage } from './components/HeadMessage';
 
 export function App() {
   // const [search, setSearch] = useState(localStorage.getItem('value') || '');
@@ -18,22 +19,17 @@ export function App() {
   // const valueSearch: string = search;
 
   return (
-    <div className="container">
-      <h1>
-        Search does not work, second task funcionality is not implemented, no
-        routing
-      </h1>
-      <ErrorBoundary>
-        <Provider>
-          {/* <SearchContext.Provider value={search}> */}
-          {/* <SearchContext.Provider value={{ search, setSearch, items, setItems }}> */}
-          {/* <Search onSearch={changeSearch} search={search} /> */}
-          <Search />
-          {/* <CoctailData search={search} /> */}
-          <CoctailData />
-          {/* </SearchContext.Provider> */}
-        </Provider>
-      </ErrorBoundary>
-    </div>
+    <ErrorBoundary>
+      <Provider>
+        <HeadMessage />
+        {/* <SearchContext.Provider value={search}> */}
+        {/* <SearchContext.Provider value={{ search, setSearch, items, setItems }}> */}
+        {/* <Search onSearch={changeSearch} search={search} /> */}
+        <Search />
+        {/* <CoctailData search={search} /> */}
+        <CoctailData />
+        {/* </SearchContext.Provider> */}
+      </Provider>
+    </ErrorBoundary>
   );
 }

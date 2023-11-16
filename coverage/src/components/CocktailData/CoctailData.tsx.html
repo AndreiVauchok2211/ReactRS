@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/69</span>
             </div>
         
             
@@ -132,15 +132,7 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -212,53 +204,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { clsx } from '../../utils/clsx';</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { useEffect, useState } from 'react';</span>
 <span class="cstat-no" title="statement not covered" >import styles from './CoctailData.module.css';</span>
-<span class="cstat-no" title="statement not covered" >import {</span>
-<span class="cstat-no" title="statement not covered" >  AstronomicalObject,</span>
-<span class="cstat-no" title="statement not covered" >  AstronomicalObjectBaseResponse,</span>
-<span class="cstat-no" title="statement not covered" >} from '../../types/types';</span>
+<span class="cstat-no" title="statement not covered" >import { AstronomicalObject } from '../../types/AstronomicalObject.type';</span>
 <span class="cstat-no" title="statement not covered" >import { SearchContext } from '../../Contexst';</span>
 <span class="cstat-no" title="statement not covered" >import { useContext } from 'react';</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const BASE_URL = `https://stapi.co/api/v2/rest/astronomicalObject/search`;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export type AstronomicalObjectBaseResponse = {</span>
+<span class="cstat-no" title="statement not covered" >  page: Page;</span>
+<span class="cstat-no" title="statement not covered" >  sort: { clauses: string[] };</span>
+<span class="cstat-no" title="statement not covered" >  astronomicalObjects: AstronomicalObject[];</span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export type Page = {</span>
+<span class="cstat-no" title="statement not covered" >  pageNumber: number;</span>
+<span class="cstat-no" title="statement not covered" >  pageSize: number;</span>
+<span class="cstat-no" title="statement not covered" >  numberOfElements: number;</span>
+<span class="cstat-no" title="statement not covered" >  totalElements: number;</span>
+<span class="cstat-no" title="statement not covered" >  totalPages: number;</span>
+<span class="cstat-no" title="statement not covered" >  firstPage: boolean;</span>
+<span class="cstat-no" title="statement not covered" >  lastPage: boolean;</span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function CoctailData() {</span>
-<span class="cstat-no" title="statement not covered" >  // { search }: { search: string }</span>
 <span class="cstat-no" title="statement not covered" >  const [error, setError] = useState&lt;Error | null&gt;(null);</span>
 <span class="cstat-no" title="statement not covered" >  const [isLoaded, setIsLoaded] = useState&lt;boolean&gt;(false);</span>
-<span class="cstat-no" title="statement not covered" >  // const [items, setItems] = useState&lt;AstronomicalObject[]&gt;([]);</span>
 <span class="cstat-no" title="statement not covered" >  const { search, items, setItems } = useContext(SearchContext);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (search === '') {</span>
-<span class="cstat-no" title="statement not covered" >      fetch('https://stapi.co/api/v2/rest/astronomicalObject/search')</span>
-<span class="cstat-no" title="statement not covered" >        .then((res) =&gt; res.json() as Promise&lt;AstronomicalObjectBaseResponse&gt;)</span>
-<span class="cstat-no" title="statement not covered" >        .then(</span>
-<span class="cstat-no" title="statement not covered" >          (result) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setItems(result.astronomicalObjects);</span>
-<span class="cstat-no" title="statement not covered" >          },</span>
-<span class="cstat-no" title="statement not covered" >          (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setError(error);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        .finally(() =&gt; setIsLoaded(true));</span>
-<span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >      fetch(</span>
-<span class="cstat-no" title="statement not covered" >        `https://stapi.co/api/v2/rest/astronomicalObject/search?name=${search}`,</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          method: 'POST',</span>
-<span class="cstat-no" title="statement not covered" >          redirect: 'follow',</span>
+<span class="cstat-no" title="statement not covered" >    fetch(`${BASE_URL}?name=${search}`, {</span>
+<span class="cstat-no" title="statement not covered" >      method: 'POST',</span>
+<span class="cstat-no" title="statement not covered" >      redirect: 'follow',</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >      .then((res) =&gt; res.json() as Promise&lt;AstronomicalObjectBaseResponse&gt;)</span>
+<span class="cstat-no" title="statement not covered" >      .then(</span>
+<span class="cstat-no" title="statement not covered" >        (result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          setIsLoaded(true);</span>
+<span class="cstat-no" title="statement not covered" >          setItems(result.astronomicalObjects);</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        (error) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          setIsLoaded(true);</span>
+<span class="cstat-no" title="statement not covered" >          setError(error);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >        .then((res) =&gt; res.json())</span>
-<span class="cstat-no" title="statement not covered" >        .then(</span>
-<span class="cstat-no" title="statement not covered" >          (result) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setIsLoaded(true);</span>
-<span class="cstat-no" title="statement not covered" >            setItems(result.astronomicalObjects);</span>
-<span class="cstat-no" title="statement not covered" >          },</span>
-<span class="cstat-no" title="statement not covered" >          (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setIsLoaded(true);</span>
-<span class="cstat-no" title="statement not covered" >            setError(error);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >  }, [search, setItems]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  if (error) {</span>
@@ -268,7 +256,7 @@
 <span class="cstat-no" title="statement not covered" >  } else {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >      &lt;div className={clsx(styles.container, styles.container__field)}&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;ul className={clsx(styles.coctail__list)}&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;ul className={styles.coctail__list}&gt;</span>
 <span class="cstat-no" title="statement not covered" >          {items.map((item: AstronomicalObject) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;li className={clsx(styles.coctail__item)} key={item.uid}&gt;</span>
 <span class="cstat-no" title="statement not covered" >              &lt;h5 className={clsx(styles.coctail__text)}&gt;NAME: {item.name}&lt;/h5&gt;</span>
@@ -289,7 +277,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T21:04:17.972Z
+                at 2023-11-15T21:04:12.602Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

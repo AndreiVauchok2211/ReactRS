@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/52</span>
+                <span class='fraction'>44/44</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/52</span>
+                <span class='fraction'>44/44</span>
             </div>
         
             
@@ -107,18 +107,7 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -132,15 +121,10 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -170,55 +154,47 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { clsx } from '../../utils/clsx';
 import styles from './Search.module.css';
 import { ChangeEvent, FormEvent } from 'react';
-// import { ChangeEvent, FormEvent, useState } from 'react';
-// import { SearchInputProps } from './searchInterfase';
 import { useState } from 'react';
-// import { ISearchConrextData } from '../../Contexst';
 import { SearchContext } from '../../Contexst';
 import { useContext } from 'react';
 &nbsp;
-export const Search: React.FC = () =&gt;
-  // export const Search: React.FC&lt;SearchInputProps&gt; = () =&gt;
-  // { onSearch, search }
-  {
-    const { search, setSearch } = useContext(SearchContext);
-    const [value, setValue] = useState(search);
-    // console.log(value);
-    console.log(search);
+export const Search: React.FC = () =&gt; {
+  const { search, setSearch } = useContext(SearchContext);
+  const [value, setValue] = useState(search);
 &nbsp;
-    function inputChangeHundler(event: ChangeEvent&lt;HTMLInputElement&gt;): void {
-      setValue(event.target.value.trim());
-      // setSearch(event.target.value.trim());
-    }
+  console.log(search);
 &nbsp;
-    function inputSearchHunder(event: FormEvent&lt;HTMLFormElement&gt;): void {
-      event.preventDefault();
-      // onSearch(value);
-      setSearch(value);
-      localStorage.setItem('value', value);
-      // localStorage.setItem('value', search);
-    }
+  function inputChangeHundler(event: ChangeEvent&lt;HTMLInputElement&gt;): void {
+    setValue(event.target.value.trim());
+  }
 &nbsp;
-    return (
-      &lt;div className={clsx(styles.form__container)}&gt;
-        &lt;form className={styles.form} onSubmit={inputSearchHunder}&gt;
-          &lt;input
-            value={value}
-            className={clsx(styles.input)}
-            type="text"
-            placeholder="Search object"
-            onChange={inputChangeHundler}
-          /&gt;
-          &lt;button
-            className={clsx(styles.button, styles.button__submit)}
-            type="submit"
-          &gt;
-            Search
-          &lt;/button&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-    );
-  };
+  function inputSearchHunder(event: FormEvent&lt;HTMLFormElement&gt;): void {
+    event.preventDefault();
+&nbsp;
+    setSearch(value);
+    localStorage.setItem('value', value);
+  }
+&nbsp;
+  return (
+    &lt;div className={clsx(styles.form__container)}&gt;
+      &lt;form className={styles.form} onSubmit={inputSearchHunder}&gt;
+        &lt;input
+          value={value}
+          className={clsx(styles.input)}
+          type="text"
+          placeholder="Search object"
+          onChange={inputChangeHundler}
+        /&gt;
+        &lt;button
+          className={clsx(styles.button, styles.button__submit)}
+          type="submit"
+        &gt;
+          Search
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -226,7 +202,7 @@ export const Search: React.FC = () =&gt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T21:04:17.972Z
+                at 2023-11-15T21:04:12.602Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

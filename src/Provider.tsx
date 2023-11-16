@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SearchContext } from './Contexst';
-import { AstronomicalObject, ProviderProps } from './types/types';
+import { ProviderProps } from './types/types';
+import { AstronomicalObject } from './types/AstronomicalObject.type';
 
 export function Provider({ children }: ProviderProps) {
   const [search, setSearch] = useState(localStorage.getItem('value') || '');

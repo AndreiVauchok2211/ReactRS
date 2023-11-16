@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { AstronomicalObject } from './types/types';
+import { AstronomicalObject } from './types/AstronomicalObject.type';
 
 export interface ISearchContextData {
   search: string;

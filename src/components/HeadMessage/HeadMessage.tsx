@@ -5,7 +5,6 @@ export const HeadMessage: React.FC = () => {
         No routing, functionality of pagination and card detailing by click is
         not implemented
       </h1>
-      ;
     </div>
   );
 };

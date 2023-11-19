@@ -12,8 +12,6 @@ export const astronomObjectApi = createApi({
         url: `?name=${search}`,
         method: 'POST',
       }),
-      // transformResponse: (response: AstronomicalObjectBaseResponse) =>
-      //   response.astronomicalObjects,
     }),
   }),
 });

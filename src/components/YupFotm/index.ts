@@ -1,0 +1,1 @@
+export { YupReactHookFotm } from './YupReactHookFotm';
